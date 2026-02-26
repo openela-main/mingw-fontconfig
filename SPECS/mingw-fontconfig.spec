@@ -2,7 +2,7 @@
 
 Name:           mingw-fontconfig
 Version:        2.12.6
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        MinGW Windows Fontconfig library
 
 License:        MIT
@@ -15,14 +15,14 @@ ExclusiveArch:  %{ix86} x86_64
 BuildRequires:  mingw32-filesystem >= 95
 BuildRequires:  mingw32-gcc
 BuildRequires:  mingw32-binutils
-BuildRequires:  mingw32-expat
+BuildRequires:  mingw32-expat >= 2.5.0-1
 BuildRequires:  mingw32-freetype
 BuildRequires:  mingw32-win-iconv
 
 BuildRequires:  mingw64-filesystem >= 95
 BuildRequires:  mingw64-gcc
 BuildRequires:  mingw64-binutils
-BuildRequires:  mingw64-expat
+BuildRequires:  mingw64-expat >= 2.5.0-1
 BuildRequires:  mingw64-freetype
 BuildRequires:  mingw64-win-iconv
 
@@ -149,6 +149,10 @@ rm -rf $RPM_BUILD_ROOT%{mingw64_datadir}/doc
 
 
 %changelog
+* Tue Nov 25 2025 Lili Zhu <lizhu@redhat.com> - 2.12.6-4
+- Rebuilt with mingw-expat fix
+  Related: RHEL-114628
+
 * Thu Aug 16 2018 Snir Sheriber <ssheribe@redhat.com> - 2.12.6-3
 - ExclusiveArch: i686, x86_64
   Related: rhbz#1615874
